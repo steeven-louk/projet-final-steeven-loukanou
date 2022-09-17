@@ -10,10 +10,31 @@ const accessToken = JSON.parse(localStorage.getItem('token'))
 
 
 
-/******LOGIN DEBUT ********/
+/***********AUTHENTIFICATION*************/
 
-export const Login = async (getEmail, getPassword, props) => {
 
+/********MIDDLEWARE *********/
+
+export const withAuth = (Component) =>{
+    const AuthRoute = () => {
+      const isAuth = JSON.parse(localStorage.getItem("token"));
+      if (isAuth) {
+        return <Component />;
+      } else {
+        return <Connexion />;
+      }
+    };
+  
+    return AuthRoute;
+    }
+  
+/********FIN MIDDLEWARE ********/
+  
+
+/*********LOGIN ***********/
+  
+  export const Login = async (getEmail, getPassword, props) => {
+  
     try {
   
       const log_in = await axios
@@ -38,5 +59,8 @@ export const Login = async (getEmail, getPassword, props) => {
     }
   };
 
+
+/*********FIN LOGIN ***********/
+
   
-  /********LOGIN FIN ******/
+/***********FIN AUTHENTIFICATION*************/
