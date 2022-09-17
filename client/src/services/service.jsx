@@ -69,8 +69,10 @@ export const withAuth = (Component) =>{
 
 /*******RECUPERATION DE TOUT LES COLLABORATEUR********/
 
-export const getAllCollaborateur =async()=>{
+export const getAllCollaborateur =async(setLoading)=>{
+  
     try {
+      setLoading(true);
      const getAll = await axios.get(url_All_Collab,{
         headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -78,6 +80,7 @@ export const getAllCollaborateur =async()=>{
     }
     
   )
+  setLoading(false);
    return getAll;
   
     } catch (error) {
