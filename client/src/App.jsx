@@ -5,6 +5,9 @@ import { Index } from "./views/home";
 import Liste from "./views/liste/Liste";
 import ModifierProfile from "./views/profile/ModifierProfile";
 
+import { withAuth } from "./services/service";
+
+
 import './App.css'
 
 
@@ -31,4 +34,4 @@ function App() {
   )
 }
 
-export default App
+export default withAuth(App); 
