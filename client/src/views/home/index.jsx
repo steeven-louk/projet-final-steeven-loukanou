@@ -9,7 +9,7 @@ import { getRandomCollaborateur } from "../../services/service";
 export const Index = () => {
 
 
-   const [getRandom, setGetRandom] = useState(null);
+const [getRandom, setGetRandom] = useState(null);
 
 
 const randoms = () =>{
