@@ -64,3 +64,25 @@ export const withAuth = (Component) =>{
 
   
 /***********FIN AUTHENTIFICATION*************/
+
+
+/*******RECUPERATION DE TOUT LES COLLABORATEUR********/
+
+export const getAllCollaborateur =async()=>{
+    try {
+     const getAll = await axios.get(url_All_Collab,{
+        headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+    
+  )
+   return getAll;
+  
+    } catch (error) {
+      console.error('errorMgs', error.message);
+    }
+   
+  }
+  
+  /*******FIN DE RECUPERATION DE TOUT LES COLLABORATEUR********/
