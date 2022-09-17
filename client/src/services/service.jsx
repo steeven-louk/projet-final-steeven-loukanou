@@ -86,3 +86,26 @@ export const getAllCollaborateur =async()=>{
   }
   
   /*******FIN DE RECUPERATION DE TOUT LES COLLABORATEUR********/
+
+
+  /*******RECUPERATION RANDOM D'UN COLLABORATEUR********/
+
+export const getRandomCollaborateur = async() => {
+
+    try {
+      const getRandomCollab = await axios.get(random_Collab,{
+         headers: {
+         Authorization: `Bearer ${accessToken}`,
+       },
+     }
+     
+   );
+    return getRandomCollab;
+   
+     } catch (error) {
+       console.error('errorMgs', error.message);
+     }
+  
+  }
+  
+  /*******FIN RECUPERATION RANDOM D'UN COLLABORATEUR********/
