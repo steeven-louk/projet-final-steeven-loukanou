@@ -109,3 +109,30 @@ export const getRandomCollaborateur = async() => {
   }
   
   /*******FIN RECUPERATION RANDOM D'UN COLLABORATEUR********/
+
+
+
+  /*********  ADMIN ***************/
+  
+/**********SUPPRESSION DU COLLABORATEUR */
+
+export const deleteCollaborateur = async(id, collaborateur) =>{
+    try {
+      const delUser = axios.delete(`${url_All_Collab}/${ id}`,{
+       headers: {
+       Authorization: `Bearer ${accessToken}`,
+     }})
+      .then((res)=> console.log('le profile à été supprimer', res))
+      return delUser
+    } catch (error) {
+      console.log('errorMsg', error.message)
+    }
+  }
+
+
+
+/**********SUPPRESSION DU COLLABORATEUR */
+
+
+
+  /********* FIN ADMIN ***************/
