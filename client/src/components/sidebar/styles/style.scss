@@ -2,7 +2,7 @@
     position: fixed;
     padding-top: 5px;
     left: 0;
-    top: 59px;
+    top: 78px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -11,6 +11,10 @@
    
     border-right: 1px solid #AAAAAA;
     z-index: 1;
+
+    @media only screen and (max-width:450px) {
+        width: 186px;
+    }
     
     &__container{
 
@@ -25,6 +29,12 @@
             &:hover{
                 background: rgb(14, 250, 14);
             }
+
+            
+    @media only screen and (max-width:450px) {
+        width: 150px;
+        font-size: 15px;
+    }
         }
    
         .sidebar__userProfilPic{
@@ -56,10 +66,33 @@
                 text-transform: capitalize;
                 transition: .4s all ease;
 
+                &:nth-last-child(1){
+                    button{
+                        padding: 0;
+                        background: transparent;
+
+                        @media only screen and (max-width:450px) {
+                            font-size: 20px;
+                            right:25px
+                        }
+
+                        &:hover{
+                            outline: none;
+                            border: none;
+                        }
+                    }
+                }
+
                 .nav-link{
                     font-weight: 400;
                     font-size: 25px;
                     line-height: 2em;
+
+                    @media only screen and (max-width:450px) {
+                        position: relative;
+                        font-size: 20px;
+                        right:25px
+                    }
 
 
                     &:hover{
@@ -77,8 +110,11 @@
                     }
                 }
             }
+         
 
         }
+        
+  
     }
 
 }

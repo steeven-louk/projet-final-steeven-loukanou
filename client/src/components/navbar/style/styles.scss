@@ -11,29 +11,49 @@
 
     .nav{
         display: flex;
+        align-items: center;
+
 
         .nav-brand{
+            display: flex;
+            flex-direction: column;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1.5px;
+            text-align: left;
+
+          small{
+            font-size: 10px;
+          }
+
         }
 
         .input-box{
             margin-left: 10em;
+            position: relative;
+            
+           
+        @media only screen and (max-width:450px) {
+            margin-left: 2em;
+          }
 
             .icon{
-              position: relative;
-              left: 24px;
+              position: absolute;
+              left: 4px;
               color: #000;
-              top: 2px;
+              top: 5.5px;
             }
             input{
                 border-radius: 25px;
                 padding: 5px;
                 padding-left: 25px;
-                width: 20em;
+                width:25em;
                 background-color: #ccc;
                 color: #000;
+
+                @media only screen and (max-width:561px) {
+                    width: 17em;
+                  }
 
                 &:active{
                     outline: none;
@@ -46,6 +66,10 @@
             align-items: center;
             margin-left: 25px;
             gap: 25px;
+
+            @media only screen and (max-width:768px){
+                display: none;
+            }
 
             .parNom, .category{
                 select{

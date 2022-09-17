@@ -1,6 +1,6 @@
 .profile_page{
     display: flex;
-
+    margin-top: 30px;
     justify-content: center;
     align-items: center;
     place-items: center;
@@ -11,6 +11,8 @@
         border-radius: 25px;
         border: 1px solid #fff;
         text-align: left;
+
+
        
         form{
             display: flex;
@@ -18,6 +20,10 @@
             align-items: baseline;
             gap: 25px;
             flex-direction: row;
+
+            @media only screen and (max-width:620px) {
+                flex-direction: column;
+              }
 
             .form-left, .form-right{
               
@@ -48,6 +54,14 @@
 
                 }
             }
+
+            button{
+                @media only screen and (max-width:600px) {
+                    width: 100%;
+                }
+                
+            }
+           
         }
     }
 }
