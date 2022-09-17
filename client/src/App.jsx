@@ -4,6 +4,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import { Index } from "./views/home";
 import Liste from "./views/liste/Liste";
 import ModifierProfile from "./views/profile/ModifierProfile";
+import AjouterCollab from "./views/profile/AjouterCollab";
 
 import { withAuth } from "./services/service";
 
@@ -30,7 +31,8 @@ function App() {
             <Routes>
               <Route path="/" exact element={ <Index /> }/>
               <Route path="/liste" element={ <Liste  search={searchInput} setSearch={setSearchInput} /> }/>
-              <Route path="/profile" element={ <ModifierProfile/> }/>
+              <Route path="/editer" element={ <ModifierProfile/> }/>
+              <Route path="/ajouter" element={ <AjouterCollab/> }/>
             </Routes>
         </div>
     </div>

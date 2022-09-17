@@ -114,6 +114,26 @@ export const getRandomCollaborateur = async() => {
 
   /*********  ADMIN ***************/
   
+
+/**********AJOUT DU COLLABORATEUR */
+
+export const addCollaborateur = async(state) =>{
+  try {
+    const addUser = axios.post(url_All_Collab,{
+     headers: {
+     Authorization: `Bearer ${accessToken}`,
+   }}, state)
+    .then((res)=> console.log('le profile à été ajouter', res))
+    return addUser;
+
+  } catch (error) {
+    console.log('errorMsg', error.message)
+  }
+}
+
+/**********AJOUT DU COLLABORATEUR */
+
+
 /**********SUPPRESSION DU COLLABORATEUR */
 
 export const deleteCollaborateur = async(id, collaborateur) =>{
@@ -128,8 +148,6 @@ export const deleteCollaborateur = async(id, collaborateur) =>{
       console.log('errorMsg', error.message)
     }
   }
-
-
 
 /**********SUPPRESSION DU COLLABORATEUR */
 
