@@ -9,14 +9,18 @@ import { withAuth } from "./services/service";
 
 
 import './App.css'
+import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 
 function App() {
 
+  const [searchInput, setSearchInput] = useState('');
+
   return (
     <div className="App">
-        <Navbar />
- {/* search={searchInput} setSearch={setSearchInput} */}
+        <Navbar  search={searchInput} setSearch={setSearchInput}/>
+
  <div className="care">
           <div className="sideBar">
             <Sidebar />
@@ -25,7 +29,7 @@ function App() {
         <div className="pageContainer">
             <Routes>
               <Route path="/" exact element={ <Index /> }/>
-              <Route path="/liste" element={ <Liste /> }/>
+              <Route path="/liste" element={ <Liste  search={searchInput} setSearch={setSearchInput} /> }/>
               <Route path="/profile" element={ <ModifierProfile/> }/>
             </Routes>
         </div>
