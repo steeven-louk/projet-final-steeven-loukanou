@@ -1,0 +1,53 @@
+.profile_page{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+
+    .profile_container{
+
+        padding: 10%;
+        border-radius: 25px;
+        border: 1px solid #fff;
+        text-align: left;
+       
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 25px;
+            flex-direction: row;
+
+            .form-left, .form-right{
+              
+                padding: 5px;
+                gap: 5px;
+
+
+                .form-group{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 5px;
+                    justify-content: center;
+                    margin-top: 5x;
+                    //align-items: center;
+
+                    label{
+                        font-weight: bold;
+                        margin-right: 15px;
+                        align-items: center;
+                    }
+
+                    select, input{
+                        width: 13em;
+                        padding: 5px;
+                        border-radius: 5px;
+                        color: #fff;
+                    }
+
+                }
+            }
+        }
+    }
+}
