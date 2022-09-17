@@ -3,7 +3,6 @@ import { Login } from '../../services/service';
 
 import './style/style.scss';
 
-//import {useNavigate} from "react-router-dom"
 
  
 
@@ -13,7 +12,7 @@ export const Connexion = () => {
     const [getEmail, setGetEmail] = useState('');
     const [getPassword, setGetPassword] = useState('');
 
-   // const navigate = useNavigate();
+
 
     const handleSubmit = (e) => {
       e.preventDefault();

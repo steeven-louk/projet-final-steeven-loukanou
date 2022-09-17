@@ -18,7 +18,7 @@ const Liste = (props) => {
 const handleDelete =(id) =>{
   setAllCollaborateurs(Collaborateurs.filter((collab)=> collab.id !== id))
 }
-  
+
   return (
     <div className="liste_page">
     <h2>Liste des collaborateurs</h2>

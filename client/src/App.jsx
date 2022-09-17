@@ -12,6 +12,7 @@ import { withAuth } from "./services/service";
 import './App.css'
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { Connexion } from "./views/auth/Connexion";
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
 
         <div className="pageContainer">
             <Routes>
-              <Route path="/" exact element={ <Index /> }/>
+              <Route path="/home" exact element={ <Index /> }/>
               <Route path="/liste" element={ <Liste  search={searchInput} setSearch={setSearchInput} /> }/>
               <Route path="/editer" element={ <ModifierProfile/> }/>
               <Route path="/ajouter" element={ <AjouterCollab/> }/>

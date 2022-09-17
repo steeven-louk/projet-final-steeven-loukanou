@@ -48,7 +48,8 @@ export const withAuth = (Component) =>{
               localStorage.setItem('token',JSON.stringify(res.data.token) );
               localStorage.setItem('user',JSON.stringify(res.data.user) );
           
-           return <Index /> ;
+           //return <Index /> ;
+           window.location.replace('http://127.0.0.1:5173/home');
           }
         })
         
