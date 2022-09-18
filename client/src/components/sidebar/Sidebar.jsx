@@ -2,23 +2,14 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles/style.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
+import { logout } from "../../services/service";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
 
-  const logout = () => {
-    let getData = localStorage.getItem("token")
-      ? JSON.parse(localStorage.getItem("token"))
-      : [];
 
-    if (getData) {
-      localStorage.clear();
-      navigate("/");
-    }
-  };
 
   /***recuperation des information du user se trouvant dans le store */
   const { userInfo } = useSelector((state) => state.user);

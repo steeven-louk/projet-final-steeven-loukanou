@@ -46,7 +46,6 @@ export const Login = async (getEmail, getPassword) => {
           localStorage.setItem("token", JSON.stringify(res.data.token));
           localStorage.setItem("user", JSON.stringify(res.data.user));
 
-          //return <Index /> ;
           window.location.replace("http://127.0.0.1:5173/home");
         }
       });
@@ -58,6 +57,25 @@ export const Login = async (getEmail, getPassword) => {
 };
 
 /*********FIN LOGIN ***********/
+
+
+/********DECONNEXION *******/
+
+export const logout = () => {
+    let getData = localStorage.getItem("token")
+      ? JSON.parse(localStorage.getItem("token"))
+      : [];
+
+    if (getData) {
+      localStorage.clear();
+      window.location.replace("http://127.0.0.1:5173/");
+
+    }
+  };
+
+/********FIN DECONNEXION *******/
+
+
 
 /***********FIN AUTHENTIFICATION*************/
 
