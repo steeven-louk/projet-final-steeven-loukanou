@@ -30,18 +30,9 @@ export const Connexion = () => {
         progress: undefined,
         });
         setTimeout(() => {
-          logout();
+          Login(getEmail,getPassword);
         }, 2000);
         
-
-        setTimeout(() => {
-          Login(getEmail,getPassword);
-
-        }, 3000);
-
-      
-     
-
       setGetEmail('');
       setGetPassword('');
     }
