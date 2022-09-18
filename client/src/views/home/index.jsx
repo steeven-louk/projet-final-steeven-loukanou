@@ -27,7 +27,7 @@ useEffect(() => {
 
     <div className="homepage">
       <div className="homepage__container">
-        <h1>Bienvenue sur l'intranet</h1>
+        <h2>Bienvenue chez CONGO <em>consulting</em></h2>
         <p>
           La plate-forme de l'entreprise qui vous permet de retrouver tous vos
           collaborateur.

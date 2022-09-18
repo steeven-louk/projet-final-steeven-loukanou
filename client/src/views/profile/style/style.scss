@@ -1,9 +1,9 @@
 .profile_page{
-    display: flex;
-    margin-top: 30px;
-    justify-content: center;
-    align-items: center;
-    place-items: center;
+    display: flex;  
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(125deg, (#7bcd84)16%, rgba(65, 179, 74, 1) 33%);
+
 
     .profile_container{
 
@@ -11,6 +11,7 @@
         border-radius: 25px;
         border: 1px solid #fff;
         text-align: left;
+
 
 
        
@@ -53,13 +54,6 @@
                     }
 
                 }
-            }
-
-            button{
-                @media only screen and (max-width:600px) {
-                    width: 100%;
-                }
-                
             }
            
         }

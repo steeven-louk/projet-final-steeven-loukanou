@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { addCollaborateur, getAllCollaborateur } from '../../services/service';
+import { getCollaborateur } from '../../services/service';
+import {useParams} from 'react-router-dom';
 import './style/style.scss';
+import { useEffect } from 'react';
+import axios from 'axios';
 
-const AjouterCollab = () => {
+const ModifierProfile = () => {
+
+  const {id} = useParams(); 
 
   const [state, setState] = useState({
     gender:'',
@@ -21,58 +25,42 @@ const AjouterCollab = () => {
 
   });
 
-  // const AjouterCollab = (e) => {
-  //   e.preventDefault();
-  //   addCollaborateur(state);
-  // }
-
   const updateInput = (e) => {
-    setState({...state,[e.target.name]: e.target.value})
+    setState({...state,[e.target.name]: e.target.value});
   }
 
- const [Collaborateurs, setAllCollaborateurs] = useState(null);
-
-const add =(e)=>{
-  e.preventDefault();
-  setState(...Collaborateurs, state);
-  console.log('reussi', state);
-}
-
-
   useEffect(() => {
-   getAllCollaborateur().then((data)=>{
-    setAllCollaborateurs(data.data);
-   } )
-  }, []);
-
+    const data = async () =>{
+     const response = await getCollaborateur(id);
+     setState(response.data);
+    }
+    data();
+   }, [id]);
 
 
   return (
     <>
 
       <section className="profile_page">
-      <img src={state.photo}/>
+      <img src={state.photo} alt={state.nom} />
 
           <div className="profile_container">
-          
-  
-
-              <form onSubmit={(e)=>add(e)} method='post' encType='multipart/form'>
+          <form>
                 <div className="form-left">
                 <div className="form-group">
                   <label htmlFor="gender">*Civilité</label>
                   <select name="gender" value={state.gender} onChange={updateInput} id="genre" required>
-                    <option value="homme">Homme</option>
-                    <option value="femme">Femme</option>
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
                   </select>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="service">*Catégorie</label>
                   <select name="service" value={state.service} onChange={updateInput} id="categorie" required>
-                    <option value="client">Client</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="technique">Technique</option>
+                    <option value="Client">Client</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Technique">Technique</option>
                   </select>
                 </div>
 
@@ -135,7 +123,7 @@ const add =(e)=>{
 
                 </div>
 
-                <button type="submit">Ajouter</button>
+               
 
               </form>
           </div>
@@ -145,4 +133,4 @@ const add =(e)=>{
   )
 }
 
-export default AjouterCollab
+export default ModifierProfile

@@ -32,7 +32,7 @@
             margin-left: 10em;
             position: relative;
             
-           
+        //comportement pour les ecrans inferieur à 450px
         @media only screen and (max-width:450px) {
             margin-left: 2em;
           }
@@ -51,43 +51,13 @@
                 background-color: #ccc;
                 color: #000;
 
+                //comportement pour les ecrans inferieur à 561px
                 @media only screen and (max-width:561px) {
                     width: 17em;
                   }
 
                 &:active{
                     outline: none;
-                }
-            }
-        }
-
-        .filtre-container{
-            display: flex;
-            align-items: center;
-            margin-left: 25px;
-            gap: 25px;
-
-            @media only screen and (max-width:768px){
-                display: none;
-            }
-
-            .parNom, .category{
-                select{
-                    width: 10rem;
-                    padding: 5px;
-                    border-radius: 5px;
-                    margin-left: 6px;
-
-                    .option-item{
-                        padding: 45px!important;
-                        text-transform: capitalize;
-                        font-weight: bold;
-
-                        &:hover{
-                            background: green;
-                            color: #ccc
-                        }
-                    }
                 }
             }
         }
