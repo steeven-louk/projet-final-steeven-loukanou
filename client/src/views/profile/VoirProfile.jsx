@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 import './style/style.scss';
 import { useEffect } from 'react';
 
-const ModifierProfile = () => {
+const VoirProfile = () => {
 
   const {id} = useParams(); 
 
@@ -125,4 +125,4 @@ const ModifierProfile = () => {
   )
 }
 
-export default ModifierProfile
+export default VoirProfile

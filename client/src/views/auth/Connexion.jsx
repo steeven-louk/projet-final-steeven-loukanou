@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Login } from '../../services/service';
 
+import {ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './style/style.scss';
 
 
@@ -16,8 +19,28 @@ export const Connexion = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
+      toast.success('🤝 Bienvenu', {
+        position: "top-right",
+        theme:'colored',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+        setTimeout(() => {
+          logout();
+        }, 2000);
+        
 
-      Login(getEmail,getPassword);
+        setTimeout(() => {
+          Login(getEmail,getPassword);
+
+        }, 3000);
+
+      
+     
 
       setGetEmail('');
       setGetPassword('');
@@ -38,6 +61,7 @@ export const Connexion = () => {
                 <button type='submit'>connexion</button>
             </form>
         </div>
+        <ToastContainer/>
     </div>
   )
 }

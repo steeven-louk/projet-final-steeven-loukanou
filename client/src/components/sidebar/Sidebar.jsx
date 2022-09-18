@@ -1,18 +1,38 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import {  toast } from 'react-toastify';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles/style.scss";
-import { Link } from "react-router-dom";
+
 
 import { useSelector } from "react-redux";
 import { logout } from "../../services/service";
 
 const Sidebar = () => {
-
-
-
+  
   /***recuperation des information du user se trouvant dans le store */
   const { userInfo } = useSelector((state) => state.user);
+
+
+const log_out=()=>{
+  
+  toast.success('👋 A tres bientôt '+userInfo.firstname, {
+    position: "top-right",
+    theme:'colored',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    });
+    setTimeout(() => {
+      logout();
+    }, 2000);
+    
+
+}
 
   return (
     <div className="sidebar">
@@ -51,7 +71,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-items">
-              <button onClick={() => logout()} className="nav-link">
+              <button onClick={() => log_out()} className="nav-link">
                 <FontAwesomeIcon
                   className="icon"
                   icon="fa-solid fa-right-from-bracket"

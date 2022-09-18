@@ -1,14 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import { ToastContainer } from 'react-toastify';
 
 import { Navbar } from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
 
 import { Index } from "./views/home";
 import Liste from "./views/liste/Liste";
-import ModifierProfile from "./views/profile/VoirProfile";
-import { Connexion } from "./views/auth/Connexion";
-
+import VoirProfile from "./views/profile/VoirProfile";
 
 import { withAuth } from "./services/service";
 
@@ -38,10 +37,11 @@ function App() {
                 <Liste search={searchInput} setSearch={setSearchInput} />
               }
             />
-            <Route path="/voir/:id" element={<ModifierProfile />} />
+            <Route path="/voir/:id" element={<VoirProfile />} />
           </Routes>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

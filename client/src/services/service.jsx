@@ -68,8 +68,8 @@ export const logout = () => {
 
     if (getData) {
       localStorage.clear();
-      window.location.replace("http://127.0.0.1:5173/");
 
+      window.location.replace("http://127.0.0.1:5173/");
     }
   };
 
